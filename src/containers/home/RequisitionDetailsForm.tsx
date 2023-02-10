@@ -9,7 +9,7 @@ import { IRequisitionDetails } from "../../interface/forms";
 import { genderOptions, urgencyOptions } from "./constants";
 
 const RequisitionDetailsForm: React.FC<{
-  handleTab: (n: PageNumbers) => void;
+  handleTab: (n: PageNumbers, values: any, formtype: string) => void;
 }> = ({ handleTab }) => {
   const {
     handleChange,
@@ -39,7 +39,9 @@ const RequisitionDetailsForm: React.FC<{
       gender: Yup.string().required("Gender is required"),
     }),
     onSubmit: (values) => {
-      handleTab(1);
+      console.log("hy");
+      handleTab(1,values,'requisition');
+    
     },
   });
 

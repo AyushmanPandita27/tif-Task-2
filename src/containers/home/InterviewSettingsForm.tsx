@@ -11,7 +11,7 @@ import {
 } from "./constants";
 
 const InterviewDetailsForm: React.FC<{
-  handleTab: (n: PageNumbers) => void;
+  handleTab: (n: PageNumbers, values: any, formtype: string) => void;
 }> = ({ handleTab }) => {
   const {
     errors,
@@ -28,6 +28,7 @@ const InterviewDetailsForm: React.FC<{
     },
     onSubmit: (values) => {
       console.log({ values });
+      handleTab(2,values,'interview');
       alert("Form successfully submitted");
     },
   });
@@ -69,7 +70,7 @@ const InterviewDetailsForm: React.FC<{
           value={values.interviewLanguage}
         />
         <Flex w="100%" justify="flex-end" mt="4rem" gap="20px">
-          <Button colorScheme="gray" type="button" onClick={() => handleTab(1)}>
+          <Button colorScheme="gray" type="button" onClick={() => handleTab(1,{},'interview')}>
             Previous
           </Button>
           <Button colorScheme="red" type="submit">

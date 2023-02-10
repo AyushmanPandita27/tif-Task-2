@@ -64,3 +64,18 @@ export const urgencyOptions = [
     value: "2",
   },
 ];
+
+export const jobTitlee= [
+  {
+    label: "Urgent",
+    value: "0",
+  },
+  {
+    label: "Immediate joining",
+    value: "1",
+  },
+  {
+    label: "Relaxed",
+    value: "2",
+  },
+];
